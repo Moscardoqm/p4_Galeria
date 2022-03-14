@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería dels Covers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 32px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        a{
+            text-decoration: none;
+            font-family: var(--lobster);
+            text-transform: uppercase;
+            color: var(rgb(46, 6, 6));
+        }
+        :root{
+            --rosa: #e84157;
+            --verd: #7ad390;
+            --gris: #b8b6b6;
+            --lato: 'Lato', sans-serif;
+            --lobster: 'Lobster', serif;
+            --negrita: 700;
+        }
+        .container{
+            padding: 0 2em;
+            color: black;
+        }
+        body>header{
+            display: flex;
+            padding: 50px 0;
+            text-align: center;
+            height: 100vh;
+            background-color: var(--verd);
+        }
+        header .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: black;
+        }
+        hgroup{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            color: black;
+        }
+        h1{
+            font-size: 1.5em;
+            margin: 0 0 2em 0;
+            font-family: var(--lobster);
+            font-weight: var(--negrita);
+            color: white;
+        }
+        h2{
+            font-size: 1em;
+            font-family: var(--lato);
+            color: white;
+            width: 50%;
+        }
+        h3{
+            font-family: var(--lobster);
+        }
+        nav{
+            display: flex;
+            padding: 1em 3em;
+            width: 100%;
+            justify-content: space-between;
+        }
+        nav a{
+            font-size: 0.75em;
+        }
+        section:first-child .container{
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--rosa);
+            color: white;
+        }
+        section:last-child .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /*CARD PORTADES*/
+        .cover{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-grow: 1;
+            min-width: 300px;
+            max-width: 678px;
+            min-height: 350px;
+            padding: 0.5em;
+            margin: 0.3em;
+            background-color: var(--gris);
+        }
+        .cover .cover_img{
+            display: flex;
+            width: 100%;
+            height: 200px;
+        }
+        .cover .cover_img img{
+            object-fit: cover;
+            object-position: bottom;
+            object-fit: fill;
+        }
+        .cover header{
+            width: 100%;
+            background-color: black;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+        .cover h3{
+            font-family: var(--lato);
+            font-size: 0.5em;
+            color: var(--blau);
+        }
+        /*CARD DISSENYADORS*/
+        .card_dissenyadors{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin: 1em;
+            padding: 0.75em;
+            align-items: center;
+            width: 300px;
+            box-shadow: var(--rosa) 0px 0px 15px;
+        }
+        .dissenyadors_img{
+            width: 250px;
+            height: 250px;
+        }
+        .dissenyadors_img img{
+            border-radius: 250px;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .card_dissenyadors header{
+            margin: 0.75em 0 0 0;
+            text-align: center;
+        }
+
+        section:last-child{
+            height: 100%;
+            background-color: var(--gris);
+            color: var(--rosa);
+        }
+        footer{
+            height: 50vh;
+            background-color: var(--verd);
+            color: white;
+        }
+        footer .container{
+            display: flex;
+        }
+        footer p{
+            width: 17%;
+            background-color:black;
+        }
+        footer p:last-child{
+            margin-left: 34%;
+            background-color: var(--gris);
+        }
+
+        footer p a{
+            font-family: var(--opensans);
+            text-transform: capitalize;
+            font-size: 0.75em;
+        }
+
+
+        /* @media (max-width:550px){
+            html{
+                font-size:20px;
+            }
+            h1{
+                color:green;
+            }
+            section:first-child .container{
+                flex-direction: column;
+            }
+            .cover{
+                display: flex;
+                align-items: center;
+                width: 500px;
+                height: 450px;
+                background-color: crimson;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex-grow: 1;
+            }
+            .cover_img{
+                padding: 0;
+                width: 100%;
+                height: 300px;
+                align-items: center;
+                justify-content: flex-start;
+                background-color: darkgoldenrod;
+            }
+            .cover_img img{
+                height: 250px;
+                object-fit: cover;
+                object-position: center center;
+            }
+            .cover header{
+                display: flex;
+                width: 50%;
+                height: 100%;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+            }
+            .cover header h3{
+                font-size: 1.5em;
+                text-align: center;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <hgroup>
+                <h1>Galería dels Covers</h1>
+                <h2>Col·lecció gràfica de dissenys de covers musicals creats per dissenyadors gràfics</h2>
+            </hgroup>
+            <nav>
+                <a href="#portades">Portades</a>
+                <a href="#dissenyadorxs">Dissenyadorxs</a>
+                <a href="#xxss">xxss</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+            <section id="#portades">
+                <h3>Portades</h3>
+                <div class="container">
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/alderete01.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Jamón del miedo” Andrés Calamaro</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/alderete02.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Sardinista!” Opera Rock Lo-Fi Atlántica, Sr. Flavio</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/david_byrne_feelings_cover_art.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Feelings” David Byrne</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/davidcarson.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Still, Still” Nine Inch Nails</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/davidcarson_02.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“And all that could have been” Nine Inch Nails</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/davidcarsonoasis.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“OASIS5” Ray Gun</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/melero_piano2.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Piano” Daniel Melero</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/stefanrolling.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Bridges to Babylon” Rolling Stones</h3>
+                        </header>
+                    </div>
+                    <div class="cover">
+                        <div class="cover_img">
+                            <img src="disseny/img/covers/stefanseigmaster.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>“Nine Lives” Aerosmith</h3>
+                        </header>
+                    </div>
+                </div>
+            </section>
+            <section id="#dissenyadorxs">
+                <h3>Dissenyadorxs</h3>
+                <div class="container">
+                    <div class="card_dissenyadors">
+                        <div class="dissenyadors_img">
+                            <img src="disseny/img/diseñadores/david carson.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>David Carson</h3>
+                            <blockquote>
+                                “Good design is good business.”
+                            </blockquote>
+                        </header>
+                    </div>
+                    <div class="card_dissenyadors">
+                        <div class="dissenyadors_img">
+                            <img src="disseny/img/diseñadores/dr.alderete.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>Dr. Alderete</h3>
+                            <blockquote>
+                                “Design is thinking made visual.” 
+                            </blockquote>
+                        </header>
+                    </div>
+                    <div class="card_dissenyadors">
+                        <div class="dissenyadors_img">
+                            <img src="disseny/img/diseñadores/stefan seigmeister.jpg" alt="">
+                        </div>
+                        <header>
+                            <h3>Stefan Seigmester</h3>
+                            <blockquote>
+                                “Design is intelligence made visible.”
+                            </blockquote>
+                        </header>
+                    </div>
+                </div>
+            </section>
+        
+    </main>
+    <footer id="#xxss">
+            <h3>xxss</h3>
+            <div class="container">
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">E-mail</a></p>
+            </div>
+    </footer>
+</body>
+</html>
